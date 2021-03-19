@@ -1,0 +1,11 @@
+<div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+  Errore durante la visualizzazione degli articoli
+</div>
+<div class="row">
+  <app-articolo-card
+    class="col-md-4 mt-3"
+    *ngFor="let articolo of articoli"
+    [articolo]="articolo"
+    (addCartEvent)="addItemToCart($event)"
+  ></app-articolo-card>
+</div>

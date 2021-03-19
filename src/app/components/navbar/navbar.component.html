@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light fixed-top" style="background-color: #e3f2fd">
+  <span class="navbar-brand mb-0 h1">E-commerce</span>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <app-navbar-button
+        [buttonDescription]="'Articoli'"
+        (onClick)="viewItems()"
+      ></app-navbar-button>
+    </li>
+  </ul>
+
+  <app-navbar-button
+    [buttonDescription]="'Carrello'"
+    [badgeValue]="carrelloServ.badge"
+    (onClick)="viewCart()"
+  ></app-navbar-button>
+</nav>

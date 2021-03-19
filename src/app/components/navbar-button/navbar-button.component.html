@@ -1,0 +1,10 @@
+<button
+  (click)="onClickEvent()"
+  type="button"
+  class="btn btn-outline-primary my-2 my-sm-0"
+>
+  {{ buttonDescription }}
+  <span class="badge badge-light" *ngIf="badgeValue != 0">{{
+    badgeValue
+  }}</span>
+</button>
