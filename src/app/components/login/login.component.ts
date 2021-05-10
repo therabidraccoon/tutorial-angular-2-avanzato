@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.showErrorMessage = false;
   }
+
   login() {
     let loginObs = this.loginServ.login(this.nome, this.password);
     loginObs.subscribe(
@@ -43,6 +44,22 @@ export class LoginComponent implements OnInit {
       },
       (error) => {
         this.showErrorMessage = true;
+      }
+    );
+  }
+
+  goToCustomForm() {
+    this.router.navigate(
+      [
+        {
+          outlets: {
+            navbar: 'main',
+            content: 'custom-form',
+          },
+        },
+      ],
+      {
+        skipLocationChange: true,
       }
     );
   }

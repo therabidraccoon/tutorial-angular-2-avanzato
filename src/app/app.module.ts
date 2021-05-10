@@ -1,6 +1,6 @@
 import { CarrelloService } from './services/carrello.service';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,6 +16,7 @@ import { CarrelloComponent } from './components/carrello/carrello.component';
 import { ArticoloCardComponent } from './components/articolo-card/articolo-card.component';
 import { EsempioComponent } from './components/esempio/esempio.component';
 import { NavbarButtonComponent } from './components/navbar-button/navbar-button.component';
+import { CustomReactiveFormComponent } from './components/custom-reactive-form/custom-reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -26,16 +27,18 @@ import { NavbarButtonComponent } from './components/navbar-button/navbar-button.
     CarrelloComponent,
     ArticoloCardComponent,
     EsempioComponent,
-    NavbarButtonComponent
+    NavbarButtonComponent,
+    CustomReactiveFormComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [LoginService, JwtService, ArticoloService, CarrelloService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
